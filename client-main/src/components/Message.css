@@ -1,0 +1,27 @@
+.message-bubble {
+    transition: background-color 0.2s ease;
+  }
+  
+  .message-bubble:hover {
+    background-color: #c5e9c5 !important;
+  }
+  
+  .message-options {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  .message-bubble:hover .message-options {
+    opacity: 1;
+  }
+
+  .message-metadata {
+    font-size: 0.8rem !important; /* Adjust the font size as needed */
+    color: #999 !important; /* Light gray color */
+  }
+
+  .message-edited {
+    /* Additional styling for edited indicator if needed */
+    color: #777 !important; /* Lighter gray for edited text */
+    font-size:0.8rem !important;
+  }

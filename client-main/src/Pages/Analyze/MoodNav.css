@@ -1,0 +1,33 @@
+/* MoodNav.css */
+.navbar-custom {
+    background-color: #343a40;
+  }
+  
+  .navbar-brand-custom {
+    color: #f8f9fa !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .button-custom {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+  }
+  
+  .button-custom:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  
+  .search-bar {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  @media (max-width: 576px) {
+    .search-bar {
+      max-width: 100%;
+    }
+  }
+  

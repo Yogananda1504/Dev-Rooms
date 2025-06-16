@@ -1,0 +1,11 @@
+/* SideDrawer.css */
+.offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  
+  .list-group {
+    max-height: calc(100vh - 150px); /* Adjust this value based on your needs */
+    overflow-y: auto;
+  }

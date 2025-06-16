@@ -1,0 +1,106 @@
+.analyze-container {
+  background-color: #f8f9fa;
+  overflow-y: auto;
+}
+.custom-navbar .navbar-brand {
+  font-weight: bold;
+}
+
+.search-form {
+  width: 300px;
+  max-width: 100%;
+}
+
+.search-input {
+  border-right: none;
+}
+
+.search-btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.fetch-btn {
+  transition: all 0.3s ease;
+  width: auto;
+  padding: 0.375rem 0.75rem;
+}
+
+.fetch-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 991px) {
+  .custom-navbar .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .search-form, .fetch-btn {
+    width: 250px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .fetch-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0.375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.mood-card, .emotion-card {
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.mood-card:hover, .emotion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.1);
+}
+
+.mood-emoji {
+  font-size: 5rem;
+}
+
+.mood-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.sentiment-score {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.custom-tooltip {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.custom-tooltip .label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.custom-tooltip .intro,
+.custom-tooltip .desc {
+  margin: 0;
+}

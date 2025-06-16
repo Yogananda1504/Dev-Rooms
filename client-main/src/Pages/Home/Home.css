@@ -1,0 +1,83 @@
+/* Home.css */
+
+/* Set the entire page background to black */
+body, html {
+    background-color: black !important;
+    height: 100% !important;
+    margin: 0 !important;
+}
+
+/* Container for the home component */
+.home-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    color: white !important;
+    padding: 1rem !important; /* Add some padding for better appearance on smaller screens */
+}
+
+/* Style for the form container */
+.form-container {
+    background-color: white !important; /* White background for the form */
+    padding: 2rem !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+    width: 28vw !important;
+}
+
+/* Text color inside the form to black */
+.form-container .form-label,
+.form-container .form-control {
+    color: black !important;
+}
+
+.form-container .form-select {
+    color: black !important;
+}
+
+/* Set the input placeholder color */
+.form-container .form-control::placeholder {
+    color: #6c757d !important; /* Bootstrap's placeholder color */
+}
+
+/* Custom Button Style */
+.form-container .btn-success {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .form-container {
+        width: 40vw !important; /* Adjust width for large tablets and small laptops */
+    }
+}
+
+@media (max-width: 992px) {
+    .form-container {
+        width: 50vw !important; /* Adjust width for tablets */
+        padding: 1.5rem !important; /* Adjust padding for better fit on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        width: 60vw !important; /* Adjust width for large mobile devices */
+        padding: 1.5rem !important; /* Adjust padding for better fit on large mobile devices */
+    }
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        width: 80vw !important; /* Adjust width for mobile devices */
+        padding: 1rem !important; /* Adjust padding for better fit on mobile devices */
+    }
+}
+
+@media (max-width: 375px) {
+    .form-container {
+        width: 90vw !important; /* Adjust width for small mobile devices */
+        padding: 0.5rem !important; /* Adjust padding for better fit on small mobile devices */
+    }
+}

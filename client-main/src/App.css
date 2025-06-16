@@ -1,0 +1,73 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .activity-section {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+  
+  .message-display-section {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+  
+  .input-container {
+    padding: 1rem;
+    background-color: #f8f9fa;
+  }
+  
+  .message {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message-self {
+    align-items: flex-end;
+  }
+  
+  .message-other {
+    align-items: flex-start;
+  }
+  
+  .message-bubble {
+    max-width: 70%;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    display: inline-block;
+  }
+  
+  .message-self .message-bubble {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .message-other .message-bubble {
+    background-color: #e9ecef;
+  }
+  
+  .message-username {
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+    color: #6c757d;
+  }
+  
+  .input-container .form-group {
+    margin-bottom: 0;
+  }
+  
+  .input-container .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .input-container .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }

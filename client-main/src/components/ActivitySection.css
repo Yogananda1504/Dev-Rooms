@@ -1,0 +1,181 @@
+/* ActivitySection.css */
+
+.activity-section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+
+.message-display-section {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 60px; /* Ensure space for input container */
+  padding-bottom: 10px;
+}
+
+@media (max-height: 600px) {
+  .message-display-section {
+    height: calc(100vh - 200px);
+  }
+}
+
+.input-container {
+  display: flex;
+  margin-top: 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.emoji-image .btn-link {
+  text-decoration: none !important;
+}
+
+.input-container form {
+  display: flex;
+  width: 100%;
+}
+
+.input-container .form-control {
+  flex-grow: 1;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-container .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.emoji-picker {
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  z-index: 999;
+}
+
+.emoji-picker em-emoji-picker {
+  --background-rgb: 248, 249, 250;
+  --border-radius: 0.25rem;
+  --category-icon-size: 20px;
+  --font-family: inherit;
+  --font-size: 16px;
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.option-container {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #dee2e6;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.option-container .btn {
+  margin: 0 5px;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.option-container .btn-link {
+  color: #6c757d;
+}
+
+.message-checkbox {
+  margin-right: 10px;
+}
+
+.message-self .message-checkbox {
+  order: 1;
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.message.pinned {
+  background-color: #f0f8ff; /* Light blue background for pinned messages */
+  border-left: 3px solid #1e90ff; /* Blue left border */
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.pin-icon:hover {
+  color: #1e90ff; /* Blue color on hover */
+}
+
+.pinned-messages-section {
+  background-color: #f0f8ff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.pinned-messages-section .message {
+  background-color: #ffffff;
+  border-left: 3px solid #1e90ff;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+}
+
+
+/* Ensure full width on mobile */
+@media (max-width: 576px) {
+  .input-container .form-control,
+  .input-container .btn {
+    font-size: 16px; /* Prevent zoom on input focus on iOS */
+  }
+
+  .message-display-section {
+    margin-bottom: 110px; /* Ensure space for input container in mobile */
+  }
+
+  .option-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .option-container .btn {
+    margin: 5px;
+    flex: 1 0 40%;
+    max-width: 45%;
+  }
+}
+
+.scroll-to-bottom {
+  position: fixed;
+  bottom: 5rem;
+  right: 50%;
+  z-index: 1000;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 0.3rem solid white;
+  font-size: 2rem;
+}
+
+@media (max-width: 576px) {
+  .scroll-to-bottom {
+    bottom: 5rem;
+    right: 50%;
+  }
+}
