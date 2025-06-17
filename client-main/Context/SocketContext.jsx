@@ -106,13 +106,13 @@ export const SocketProvider = ({ children }) => {
 };
 
 // For backward compatibility - create a singleton socket instance
-const url = import.meta.env.VITE_API_URL;
-export const socket = io(url, {
-    reconnection: true,
-    reconnectionDelay: 500,
-    reconnectionAttempts: 5,
-    transports: ['websocket', 'polling'],
-    secure: true,
-    timeout: 10000,
-    autoConnect: true,
-});
+// const url = import.meta.env.VITE_API_URL;
+// export const socket = io(url, {
+//     reconnection: true,
+//     reconnectionDelay: 500,
+//     reconnectionAttempts: 5,
+//     transports: ['websocket', 'polling'],
+//     secure: true,
+//     timeout: 10000,
+//     autoConnect: true,
+// });
