@@ -427,8 +427,10 @@ const handleSocketEvents = (io, redisClient) => {
       }
     });
 
+    // Delete for Me - only hides messages for the requesting user
     socket.on("delete_for_me", async ({ username, room, messageIds }) => {
       try {
+        // Adds username to deletedForMe array - message stays visible to others
         await Message.updateMany(
           { _id: { $in: messageIds } },
           { $addToSet: { deletedForMe: username } }
@@ -439,8 +441,10 @@ const handleSocketEvents = (io, redisClient) => {
       }
     });
 
+    // Delete for Everyone - removes message content for all users
     socket.on("delete_for_everyone", async ({ username, room, messageIds }) => {
       try {
+        // Replaces message content and marks as deleted for everyone
         await Message.updateMany(
           { _id: { $in: messageIds } },
           {
@@ -450,6 +454,7 @@ const handleSocketEvents = (io, redisClient) => {
           }
         );
         await updateUserActivity(username, room);
+        // Notifies all users in the room about the deletion
         io.to(room).emit("messages_deleted", { messageIds, username });
       } catch (error) {
         console.error("Error marking messages for deletion:", error);

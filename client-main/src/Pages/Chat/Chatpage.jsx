@@ -9,7 +9,7 @@ import NavBar from '../../components/NavBar';
 import SideDrawer from '../../components/SideDrawer';
 import ActivitySection from '../../components/ActivitySection';
 import InactivityPopup from '../../components/InactivityPopup';
-import { socket } from '../../../Context/SocketContext';
+import { useSocket } from '../../../Context/SocketContext';
 import { ActiveUserContext } from '../../../Context/ActiveUserContext';
 import './Chatpage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,7 +21,7 @@ const TOKEN_RENEWAL_INTERVAL = 14 *60 * 1000;
 const INACTIVITY_WARNING_TIME = 60* 1000;  
 
 // eslint-disable-next-line react/prop-types
-function Chatpage({ username, setActivitystatus,leftstatus,setLeftstatus,isConnected}) {
+function Chatpage({ username, setActivitystatus,leftstatus,setLeftstatus}) {
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState([]);
   const [showDrawer, setShowDrawer] = useState(false);
@@ -29,6 +29,7 @@ function Chatpage({ username, setActivitystatus,leftstatus,setLeftstatus,isConne
   const [isAdmin, setIsAdmin] = useState(sessionStorage.getItem('isAdmin')||false);
   const [isLocked, setIsLocked] = useState(sessionStorage.getItem('isLocked') === 'true');  const { room } = useParams();
   const navigate = useNavigate();
+  const { socket, isConnected } = useSocket();
   const inactivityTimerRef = useRef(null);
   const inactivityWarningTimerRef = useRef(null);
   const tokenRenewalTimerRef = useRef(null);

@@ -7,7 +7,7 @@ import E_401 from './Pages/error/E_401';
 import E_500 from './Pages/error/E_500';
 import E_403 from './Pages/error/E_403';
 import Analyze from './Pages/Analyze/Analyze.jsx';
-import { socket, SocketContext } from '../Context/SocketContext';
+import { SocketProvider } from '../Context/SocketContext';
 import { ActiveUserProvider } from '../Context/ActiveUserContext.jsx';
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
   }, [room]);
 
   return (
-    <SocketContext.Provider value={socket}>
+    <SocketProvider>
       <ActiveUserProvider>
         <Router>
           <Routes>
@@ -86,7 +86,7 @@ function App() {
           </Routes>
         </Router>
       </ActiveUserProvider>
-    </SocketContext.Provider>
+    </SocketProvider>
   );
 }
 

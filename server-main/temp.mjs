@@ -100,6 +100,8 @@ export default async () => {
     }
   };
 
+  //It will deal the connection of the pub & sub clients to the redis server inter server instance communications 
+  //After that we configure them to the io server's adapter . Pub will be used for the broadcasting and sub for the sake of listening to this
   await connectRedis();
   io.adapter(createAdapter(pubClient, subClient));
 
@@ -162,29 +164,6 @@ export default async () => {
     }
   };
 
-  // Handle shutdown signals and errors
-  ["SIGINT", "SIGTERM", "SIGQUIT"].forEach((signal) => {
-    process.on(signal, () => gracefulShutdown(signal));
-  });
-
-  process.on("uncaughtException", (err) => {
-    console.error("Uncaught Exception:", err);
-    gracefulShutdown("Uncaught Exception");
-  });
-
-  process.on("unhandledRejection", (reason, promise) => {
-    console.error("Unhandled Rejection at:", promise, "reason:", reason);
-    gracefulShutdown("Unhandled Rejection");
-  });
-};
-      console.log("Redis connections closed.");
-      process.exit(0);
-    } catch (err) {
-      console.error("Error during graceful shutdown:", err);
-      process.exit(1);
-    }
-  };
-
   // Handle various shutdown signals
   ["SIGINT", "SIGTERM", "SIGQUIT"].forEach((signal) => {
     process.on(signal, () => gracefulShutdown(signal));
@@ -200,3 +179,4 @@ export default async () => {
     gracefulShutdown("Unhandled Rejection");
   });
 };
+      

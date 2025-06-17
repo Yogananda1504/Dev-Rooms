@@ -3,7 +3,7 @@ import { useNavigate,useLocation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Container, Form, Button } from 'react-bootstrap';
-import { SocketContext } from '../../../Context/SocketContext';
+import { useSocket } from '../../../Context/SocketContext';
 import axios from 'axios';
 import './Home.css';
 
@@ -13,7 +13,7 @@ const Home = ({ username, setUsername, room, setRoom, activitystatus, setActivit
     const navigate = useNavigate();
     const location = useLocation();
     const errorMsg = location.state?.errorMsg ;
-    const socket = useContext(SocketContext);
+    const { socket } = useSocket();
     const [isJoining, setIsJoining] = useState(false);
     const [isCustomRoom, setIsCustomRoom] = useState(false);
     const [isJoiningExistingRoom, setIsJoiningExistingRoom] = useState(false);

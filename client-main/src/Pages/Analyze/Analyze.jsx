@@ -6,6 +6,7 @@ import { Navbar, Container, Nav, Form, FormControl, Button, Card, Row, Col, List
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { ActiveUserContext } from '../../../Context/ActiveUserContext';
+import { useSocket } from '../../../Context/SocketContext';
 import Loading from '../../components/Loading';
 import "./Analyze.css";
 
@@ -37,7 +38,8 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 };
 
-const Analyze = ({ username, room, socket }) => {
+const Analyze = ({ username, room }) => {
+    const { socket, isConnected } = useSocket();
     const [searchTerm, setSearchTerm] = useState('');
     const [displayedUser, setDisplayedUser] = useState(username);
     const [userData, setUserData] = useState(null);
